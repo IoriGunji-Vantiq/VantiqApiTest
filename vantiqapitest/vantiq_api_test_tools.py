@@ -11,8 +11,8 @@ async def get_root():
     }
     return response
 
-@app.post('/')
-async def post_root(request: Request):
+# @app.post('/')
+# async def post_root(request: Request):
     # X-Line-Signature ヘッダーの値を取得
     # signature = request.headers.get('X-Line-Signature', '')
 
@@ -48,4 +48,4 @@ async def post_root(request: Request):
     #     ai_message = response['choices'][0]['message']['content']
 
     # LINE Webhook サーバーへ HTTP レスポンスを返す
-    return 'ok'
+    # return 'ok'
