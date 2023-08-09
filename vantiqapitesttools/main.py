@@ -26,10 +26,7 @@ async def post_root(request: Request):
 @app.get('/horoscope')
 async def get_horoscope():
     zodiac_sign = ['牡羊座', '牡牛座', '双子座', '蟹座', '獅子座', '乙女座', '天秤座', '蠍座', '射手座', '山羊座', '水瓶座', '魚座']
-    random_num = random.randint(0, 11)
-    print(random_num)
-    random_sign = zodiac_sign(random_num)
-    print(random_sign)
+    random_sign = zodiac_sign[random.randint(0, 11)]
     return random_sign
 
 @app.post('/auth-area')
