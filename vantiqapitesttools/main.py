@@ -16,6 +16,9 @@ async def post_root(request: Request):
     response = {
         "message": "Hello, world!"
         , "timestamp": datetime.datetime.now()
-        , "request_body": await request.body()
+        , "request": {
+            "headers": request.headers
+            , "body": await request.body()
+        }
     }
     return response
