@@ -24,7 +24,7 @@ async def post_root(request: Request):
     return response
 
 @app.get('/horoscope')
-async def get_horoscope(month):
+async def get_horoscope(month = None):
     zodiac_sign = ['牡羊座', '牡牛座', '双子座', '蟹座', '獅子座', '乙女座', '天秤座', '蠍座', '射手座', '山羊座', '水瓶座', '魚座']
     result_sign
     if(1 <= month and month <= 12):
