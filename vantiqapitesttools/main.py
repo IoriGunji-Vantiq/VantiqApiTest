@@ -34,7 +34,7 @@ async def get_horoscope(month = 0):
     return result_sign
 
 @app.get('/auth-area')
-async def post_auth_area(request: Request):
+async def get_auth_area(request: Request):
     token = request.headers.get('Authorization', '')
     if(token == "vantiq-token"):
         return 'Get OK'
@@ -48,3 +48,11 @@ async def post_auth_area(request: Request):
         return 'Post OK'
     else:
         return 'Post NG'
+
+@app.put('/anything')
+async def put_anything(request: Request):
+    token = request.headers.get('Authorization', '')
+    if(token == "vantiq-token"):
+        return 'Put OK'
+    else:
+        return 'Put NG'
