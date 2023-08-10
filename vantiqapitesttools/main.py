@@ -33,10 +33,18 @@ async def get_horoscope(month = 0):
         result_sign = zodiac_sign[random.randint(0, 11)]
     return result_sign
 
+@app.get('/auth-area')
+async def post_auth_area(request: Request):
+    token = request.headers.get('Authorization', '')
+    if(token == "vantiq-token"):
+        return 'Get OK'
+    else:
+        return 'Get NG'
+
 @app.post('/auth-area')
 async def post_auth_area(request: Request):
     token = request.headers.get('Authorization', '')
     if(token == "vantiq-token"):
-        return 'OK'
+        return 'Post OK'
     else:
-        return 'NG'
+        return 'Post NG'
