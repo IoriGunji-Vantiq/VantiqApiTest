@@ -27,8 +27,8 @@ async def post_root(request: Request):
 async def get_horoscope(month = 0):
     zodiac_sign = ['牡羊座', '牡牛座', '双子座', '蟹座', '獅子座', '乙女座', '天秤座', '蠍座', '射手座', '山羊座', '水瓶座', '魚座']
     result_sign = ''
-    if(1 <= month and month <= 12):
-        result_sign = zodiac_sign[month - 1]
+    if(1 <= int(month) and int(month) <= 12):
+        result_sign = zodiac_sign[int(month) - 1]
     else:
         result_sign = zodiac_sign[random.randint(0, 11)]
     return result_sign
